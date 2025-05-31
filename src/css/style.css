@@ -219,6 +219,19 @@ button {
   font-size: 1em;
 }
 
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  border: 1px solid darkorange;
+}
+
+.alert > p {
+  margin: 0;
+}
+
 /* End product list card */
 
 .product-detail {
