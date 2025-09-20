@@ -17,7 +17,6 @@ function shoppingCartTemplate(item) {
   </li>`;
 }
 
-
 export default class ShoppingCart {
   constructor(products, listElement) {
     this.products = products;
@@ -26,5 +25,4 @@ export default class ShoppingCart {
   async init() {
     renderListWithTemplate(shoppingCartTemplate, this.listElement, this.products);
   }
-
 }
