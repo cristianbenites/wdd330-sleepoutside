@@ -2,9 +2,9 @@ import { renderListWithTemplate } from "./utils.mjs";
 
 function productCardTemplate(product) {
     return `<li class="product-card">
-        <a href="product_pages/?product=${product.Id}">
+        <a href="/product_pages/?product=${product.Id}">
           <img
-            src="${product.Image}"
+            src="${product.Images.PrimaryMedium}"
             alt="Image of ${product.NameWithoutBrand}">
           <h3 class="card__brand">${product.Brand.Name}</h3>
           <h2 class="card__name">${product.NameWithoutBrand}</h2>
@@ -21,7 +21,7 @@ export default class ProductList {
     this.products = [];
   }
   async init() {
-    this.products = await this.dataSource.getData();
+    this.products = await this.dataSource.getData(this.category);
     renderListWithTemplate(productCardTemplate, this.listElement, this.products);
   }
 
