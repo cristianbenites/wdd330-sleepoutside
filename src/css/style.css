@@ -299,6 +299,16 @@ button {
   text-align: right;
 }
 
+.product-card__price > span {
+  font-size: .7em;
+  text-decoration: line-through;
+  color: white;
+  background-color: var(--tertiary-color);
+  padding: .3rem;
+  border-radius: .4rem;
+  margin-left: .2rem;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
