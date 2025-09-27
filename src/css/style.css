@@ -124,6 +124,22 @@ button {
   text-align: center;
 }
 
+.cart > a {
+  text-decoration: none;
+}
+
+.cart .quantity {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 0.2rem;
+  border-radius: 100%;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
 .cart svg {
   width: 25px;
 }
@@ -334,11 +350,11 @@ footer {
 }
 
 .product-card__price > span {
-  font-size: .7em;
+  font-size: 0.7em;
   text-decoration: line-through;
   color: white;
   background-color: var(--tertiary-color);
-  padding: .3rem;
-  border-radius: .4rem;
-  margin-left: .2rem;
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  margin-left: 0.2rem;
 }

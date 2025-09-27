@@ -29,10 +29,10 @@ export function getParam(param) {
 }
 
 export function renderListWithTemplate(templateFn,
-                                       parentElement,
-                                       list,
-                                       position = "afterbegin",
-                                       clear = false) {
+  parentElement,
+  list,
+  position = "afterbegin",
+  clear = false) {
   const htmlItems = list.map(templateFn);
   if (clear) {
     parentElement.innerHTML = '';
@@ -41,11 +41,11 @@ export function renderListWithTemplate(templateFn,
 }
 
 export function renderWithTemplate(template,
-                                   parentElement,
-                                   data,
-                                   callback) {
+  parentElement,
+  data,
+  callback) {
   parentElement.innerHTML = template;
-  if(callback) {
+  if (callback) {
     callback(data);
   }
 }
@@ -62,6 +62,29 @@ export async function loadHeaderFooter() {
 
   const footerTemplate = await loadTemplate("../partials/footer.html");
   renderWithTemplate(footerTemplate, document.querySelector("#main-footer"));
+
+  renderCartQuantity();
+}
+
+export function renderCartQuantity() {
+  const items = getLocalStorage("so-cart");
+  let quantity = 0;
+
+  if (!!items) {
+    quantity = items.length;
+  }
+
+  if (quantity > 0) {
+    const oldIcon = document.querySelector(".quantity");
+    if (oldIcon != null) {
+      oldIcon.remove();
+    }
+    const cart = document.querySelector(".cart");
+    const icon = document.createElement("div");
+    icon.classList.add("quantity");
+    icon.innerHTML = `<span>${quantity}</span>`
+    cart.appendChild(icon);
+  }
 }
 
 export function alertMessage(message, scroll = true) {
