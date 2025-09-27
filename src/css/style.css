@@ -124,6 +124,22 @@ button {
   text-align: center;
 }
 
+.cart > a {
+  text-decoration: none;
+}
+
+.cart .quantity {
+  color: white;
+  background-color: var(--primary-color);
+  padding: .2rem;
+  border-radius: 100%;
+  font-size: .9rem;
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
 .cart svg {
   width: 25px;
 }
